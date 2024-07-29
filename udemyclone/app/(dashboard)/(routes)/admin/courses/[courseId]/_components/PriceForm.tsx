@@ -15,20 +15,19 @@ import toast from "react-hot-toast"
 import { cn } from "@/lib/utils"
 import { Textarea } from "@/components/ui/textarea"
 import { Course } from "@prisma/client"
+import { formatPrice } from "@/lib/format"
 
 
 const formShema = z.object({
-    description: z.string().min(1, {
-        message: "description is required"
-    })
+    price: z.coerce.number()
 })
 
-interface DescriptionFormPorps {
+interface PriceFormPorps {
     initialData: Course
     courseId: string
     
 }
-export const DescriptionForm = ({    initialData, courseId}: DescriptionFormPorps)=>{
+export const PriceForm = ({    initialData, courseId}: PriceFormPorps)=>{
     const [isEditing, setIsEditing] = useState(false)
   const router = useRouter()
     const toggleEdit = () => setIsEditing((current) => !current)
@@ -36,7 +35,7 @@ export const DescriptionForm = ({    initialData, courseId}: DescriptionFormPorp
     const form = useForm<z.infer<typeof formShema>>({
         resolver: zodResolver(formShema),
         defaultValues: {
-            description: initialData?.description || ""
+            price: initialData?.price || undefined
         }
         
         
@@ -57,31 +56,31 @@ export const DescriptionForm = ({    initialData, courseId}: DescriptionFormPorp
     return(
         <div className="mt-6 border bg-slate-100 rounded-md p-4">
             <div className="font-medium flex items-center justify-between">
-                Course description 
+                Course price
                 <Button  onClick={toggleEdit} variant='ghost'>
                     {isEditing && (<>Cancel</>)}
                      {!isEditing && (<>
                         <Pencil className="h-4 w-4 mr-2"/>
-                        edit descrtiption
+                        edit price
                      </>)}
                      
                 </Button>
 
             </div>
             {!isEditing && (
-                <p className={cn("text-sm mt-2", !initialData.description && "text-slate-500 italic")}>{initialData.description || "no description"}</p>
+                <p className={cn("text-sm mt-2", !initialData.price && "text-slate-500 italic")}>{initialData.price ? formatPrice(initialData.price) : "free"}</p>
             )}
             {isEditing && (
                 <Form {...form}>
                 <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4 mt-4">
                     <FormField
                     control={form.control}
-                    name="description"  
+                    name="price"  
                     render={({field}) => ( 
                         <FormItem>
                         
                            <FormControl>
-                               <Textarea disabled={isSubmitting} {...field}/>
+                            <Input type="number" step="0.01" disabled={isSubmitting}  placeholder="set price" {...field} />
                            </FormControl>
                            <FormMessage/>
                         </FormItem>
