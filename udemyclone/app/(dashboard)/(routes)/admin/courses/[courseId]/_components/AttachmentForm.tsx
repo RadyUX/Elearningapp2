@@ -61,8 +61,8 @@ export const AttachmentForm = ({   initialData, courseId}: AttachmentFormPorps)=
 
 
     return(
-        <div className="mt-6 border bg-slate-100 rounded-md p-4">
-            <div className="font-medium flex items-center justify-between">
+        <div className="mt-6 border bg-[#13131B]rounded-md p-4">
+            <div className="font-medium flex items-center justify-between ">
                 Course attachment
                 <Button  onClick={toggleEdit} variant='ghost'>
                     {isEditing && (<>Cancel</>)}
@@ -81,7 +81,7 @@ export const AttachmentForm = ({   initialData, courseId}: AttachmentFormPorps)=
 
             {!isEditing && (
                 <>
-                {initialData.attachments.length === 0 && (<p>no attachment yet</p>)}
+                {initialData.attachments.length === 0 && (<p className="text-slate-500 italic">no attachment yet</p>)}
                 {initialData.attachments.length > 0 && (<div>{initialData.attachments.map((attachment) =>(<div key={attachment.id} className="flex items-center p-3 w-full "><File /><p>{attachment.name}</p>
                 {deletindId === attachment.id && (<div><Loader2/></div>)}
                 {deletindId !== attachment.id && (<button onClick={() => onDelete(attachment.id)} className="ml-auto hover:opacity-75"><X /></button>)}

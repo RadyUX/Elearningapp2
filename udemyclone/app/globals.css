@@ -68,4 +68,15 @@
   }
 }
 
+body{
+ background-color: #090911;
+ color: white;
+}
 
+input, .ql-editor, textarea{
+  color: black;
+}
+
+body > div.h-full > main > div > div.grid.grid-cols-1.md\:grid-cols-2.gap-6.mt-16 > div:nth-child(1) > div:nth-child(5) > form > div.space-y-2 > button{
+  color: #090911;
+}

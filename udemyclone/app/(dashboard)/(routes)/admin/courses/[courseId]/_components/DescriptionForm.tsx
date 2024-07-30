@@ -55,13 +55,13 @@ export const DescriptionForm = ({    initialData, courseId}: DescriptionFormPorp
       }
     }
     return(
-        <div className="mt-6 border bg-slate-100 rounded-md p-4">
-            <div className="font-medium flex items-center justify-between">
+        <div className="mt-6 border bg-[#13131B] rounded-md p-4">
+            <div className="font-medium flex items-center justify-between ">
                 Course description 
                 <Button  onClick={toggleEdit} variant='ghost'>
                     {isEditing && (<>Cancel</>)}
                      {!isEditing && (<>
-                        <Pencil className="h-4 w-4 mr-2"/>
+                        <Pencil className="h-4 w-4 mr-2 "/>
                         edit descrtiption
                      </>)}
                      

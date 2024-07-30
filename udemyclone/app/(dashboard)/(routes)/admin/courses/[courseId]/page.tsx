@@ -69,16 +69,16 @@ const CourseIdPage = async ({params}: {params: {courseId: string}}) =>{
         <div className="p-6">
          <div className="flex items-center justify-between">
             <div className="flex flex-col gap-y-2">
-                <h1 className="text-2xl font-medium">
+                <h1 className="text-2xl font-medium text-[#5DC8E6]">
                     Course setup
                 </h1>
-                <span className="text-sm text-slate-700">complete all fields {completionText}</span>
+                <span className="text-sm text-white">complete all fields {completionText}</span>
             </div>
          </div>
          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-16">
             <div>
                 <div className="flex items-center gap-x-2">
-                    <h2 className="text-xl">course customisation</h2>
+                    <h2 className="text-xl text-[#5DC8E6] ">Course customisation</h2>
                 </div>
                 <TitleForm initialData={course} courseId={course.id} />
 
