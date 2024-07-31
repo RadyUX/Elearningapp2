@@ -81,12 +81,12 @@ export const ChapterContentForm = ({
       {!isEditing && (
         <div className={cn(
           "text-sm mt-2",
-          !initialData.description && "text-slate-500 italic"
+          !initialData.content && "text-slate-500 italic"
         )}>
-          {!initialData.description && "No description"}
-          {initialData.description && (
+          {!initialData.content && "No content"}
+          {initialData.content && (
             <Preview
-              value={initialData.description}
+              value={initialData.content}
             />
           )}
         </div>

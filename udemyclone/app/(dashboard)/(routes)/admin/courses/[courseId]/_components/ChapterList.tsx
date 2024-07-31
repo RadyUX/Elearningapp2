@@ -65,7 +65,7 @@ export const ChapterList = ({
                         {chapters.map((chapter,index)=>(
                             <Draggable key={chapter.id} draggableId={chapter.id} index={index}>
                                 {(provided)=> (
-                                    <div className={cn("flex items-center gap-x-2 bg-slate-200 border-slate-200 border text-slate-700 rounded-md mb-4 text-sm",
+                                    <div className={cn("flex items-center gap-x-2 bg-[white] text-slate-700 rounded-md mb-4 text-sm",
                                         chapter.isPublished && "bg-sky-100 border-sky-200 text-sky-700"
                                     )} ref={provided.innerRef} {...provided.draggableProps}>
 
@@ -76,7 +76,7 @@ export const ChapterList = ({
                                             <div className="ml-auto pr-2 flex items-center gap-x-2">{chapter.isFree && ( <Badge>
                                                 FREE
                                             </Badge>)}
-                                            <div className={cn("bg-slate-500", chapter.isPublished && "bg-sky-700")}>
+                                            <div className={cn("bg-[#5DC8E6] text-white p-3 rounded-md")}>
                                                 {chapter.isPublished ? "Published" : "Draft"}
                                             </div>
                                             <Pencil onClick={()=> onEdit(chapter.id)} className="w-4 h-4 cursor-pointer hover:opacity-75 transition"/>

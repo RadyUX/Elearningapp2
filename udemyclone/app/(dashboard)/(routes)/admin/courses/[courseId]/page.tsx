@@ -9,7 +9,8 @@ import { PriceForm } from "./_components/PriceForm"
 import { File } from "lucide-react"
 import { AttachmentForm } from "./_components/AttachmentForm"
 import { ChapterForm } from "./_components/ChapterForm"
-
+import { Banner } from "@/components/banner"
+import { Actions } from "./_components/Actions"
 
 const CourseIdPage = async ({params}: {params: {courseId: string}}) =>{
 
@@ -65,7 +66,11 @@ const CourseIdPage = async ({params}: {params: {courseId: string}}) =>{
     
 
     const completionText = `${completedFields} / ${totalFields}`
+
+    const isComplete = requiredFields.every(Boolean)
     return (
+        <>
+        {!course.isPublished && <Banner label="Module non publié"/>}
         <div className="p-6">
          <div className="flex items-center justify-between">
             <div className="flex flex-col gap-y-2">
@@ -73,6 +78,11 @@ const CourseIdPage = async ({params}: {params: {courseId: string}}) =>{
                     Course setup
                 </h1>
                 <span className="text-sm text-white">complete all fields {completionText}</span>
+                <Actions
+            disabled={!isComplete}
+            courseId={params.courseId}
+            isPublished={course.isPublished}
+          />
             </div>
          </div>
          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-16">
@@ -96,7 +106,7 @@ const CourseIdPage = async ({params}: {params: {courseId: string}}) =>{
             <div className="space-y-6">
                 <div>
                     <div className="flex items-center gap-x-2">
-                        <h2 className="text-xl">Course chapter</h2>
+                        <h2 className="text-xl text-[#5DC8E6] ">Course chapter</h2>
                     </div>
                 </div>
                 <ChapterForm initialData={course} courseId={course.id} />
@@ -111,6 +121,7 @@ const CourseIdPage = async ({params}: {params: {courseId: string}}) =>{
              
          </div>
         </div>
+        </>
     )
 }
 export default CourseIdPage

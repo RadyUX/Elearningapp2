@@ -80,3 +80,7 @@ input, .ql-editor, textarea{
 body > div.h-full > main > div > div.grid.grid-cols-1.md\:grid-cols-2.gap-6.mt-16 > div:nth-child(1) > div:nth-child(5) > form > div.space-y-2 > button{
   color: #090911;
 }
+
+p{
+  color: white;
+}

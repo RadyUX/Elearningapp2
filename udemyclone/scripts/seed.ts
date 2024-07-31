@@ -1,22 +1,29 @@
-const {PrismaClient} = require("@prisma/client")
+const { PrismaClient } = require("@prisma/client");
 
-const db = new PrismaClient()
+const db = new PrismaClient();
 
-async function main(){
-    try{
+async function main() {
+    try {
+        // Delete existing categories
+        await db.category.deleteMany({});
+
+        // Create new categories
         await db.category.createMany({
-            data:[
+            data: [
                 {name: "Javascript"},
                 {name: "HTML & CSS"},
+                {name: "Node JS"},
+                {name: "React JS"},
+                {name: "Typescript"},
+                {name: "mySQL"},
                 {name: "Algorithme & Datastructure"},
-                {name: "Node JS"}
             ]
-        })
-    }catch(error){
-    console.log(error)
-    }finally{
-        await db.$disconnect
+        });
+    } catch (error) {
+        console.log(error);
+    } finally {
+        await db.$disconnect();
     }
 }
 
-main()
+main();

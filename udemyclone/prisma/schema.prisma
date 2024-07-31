@@ -19,14 +19,11 @@ model Course {
   imageUrl String? @db.Text
   price Float?
   isPublished Boolean @default(false)
-
   categoryId String?
   category Category? @relation(fields: [categoryId], references: [id])
-
   chapters Chapter[]
   attachments Attachment[]
   purchases Purchase[]
-
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 

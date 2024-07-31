@@ -7,6 +7,8 @@ import { ChapterTitleForm } from "./_components/ChapterTitleForm";
 import { ChapterDescriptionForm } from "./_components/ChapterDescriptionForm";
 import { ChapterAccessForm } from "./_components/ChapterAccessForm";
 import { ChapterContentForm } from "./_components/ChapterContentForm";
+import { ChapterActions } from "./_components/ChapterActions";
+
 import { Banner } from "@/components/banner";
 const ChapterIdPage = async ({
   params,
@@ -62,7 +64,7 @@ const ChapterIdPage = async ({
                   Complete all fields {completionText}
                 </span>
               </div>
-              <ChapterAction disabled={!isComplete} courseId={params.courseId} chapterId={params.chapterId} isPublished={chapter.isPublished}/>
+              <ChapterActions disabled={!isComplete} courseId={params.courseId} chapterId={params.chapterId} isPublished={chapter.isPublished}/>
             </div>
           </div>
         </div>
