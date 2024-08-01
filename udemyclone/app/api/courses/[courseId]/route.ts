@@ -1,4 +1,5 @@
 
+import { isAdmin } from "@/lib/admin"
 import { db } from "@/lib/db"
 import { auth } from "@clerk/nextjs/server"
 import { NextResponse } from "next/server"
@@ -13,7 +14,7 @@ export async function PATCH(
         const values = await req.json()
 
 
-        if(!userId){
+        if(!userId ||  !isAdmin(userId)){
             return new NextResponse("unauthorized", {status: 401})
         }
 
@@ -44,7 +45,7 @@ export async function DELETE(
     try {
       const { userId } = auth();
   
-      if (!userId) {
+      if (!userId || !isAdmin(userId)) {
         return new NextResponse("Unauthorized", { status: 401 });
       }
   

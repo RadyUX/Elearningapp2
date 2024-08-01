@@ -50,11 +50,16 @@ export const ChapterContentForm = ({
     },
   });
 
+  const removeHtmlTags = (content: string) => {
+    return content.replace(/<\/?[^>]+(>|$)/g, "");
+  };
+  
   const { isSubmitting, isValid } = form.formState;
 
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
     try {
-      await axios.patch(`/api/courses/${courseId}/chapters/${chapterId}`, values);
+      const cleanedContent = removeHtmlTags(values.content);
+      await axios.patch(`/api/courses/${courseId}/chapters/${chapterId}`, { ...values, content: cleanedContent });
       toast.success("Chapter updated");
       toggleEdit();
       router.refresh();
@@ -62,6 +67,7 @@ export const ChapterContentForm = ({
       toast.error("Something went wrong");
     }
   }
+
 
   return (
     <div className="mt-6 border bg-[#13131B] rounded-md p-4">

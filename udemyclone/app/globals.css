@@ -84,3 +84,7 @@ body > div.h-full > main > div > div.grid.grid-cols-1.md\:grid-cols-2.gap-6.mt-1
 p{
   color: white;
 }
+
+.ql-container {
+  font-size: 27px !important ;
+}

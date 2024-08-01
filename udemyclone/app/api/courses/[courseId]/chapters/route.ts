@@ -2,7 +2,7 @@
 import { db } from "@/lib/db"
 import { auth } from "@clerk/nextjs/server"
 import { NextResponse } from "next/server"
-
+import { isAdmin } from "@/lib/admin"
 export async function POST(
     req: Request,
     {params}: {params: {courseId: string}}
@@ -13,7 +13,7 @@ export async function POST(
        
 
 
-        if(!userId){
+        if(!userId ||  !isAdmin(userId)){
             return new NextResponse("unauthorized", {status: 401})
         }
 

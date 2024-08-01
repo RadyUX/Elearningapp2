@@ -1,16 +1,20 @@
 "use client"
-import { UserButton } from "@clerk/nextjs"
+import { useAuth, UserButton } from "@clerk/nextjs"
 import { usePathname, useRouter } from "next/navigation"
 import { Button } from "./ui/button"
 import { LogOut } from "lucide-react"
 import Link from "next/link"
 import { SearchInput } from "./SearchInput"
+import { isAdmin } from "@/lib/admin"
 export const NavbarRoutes = () => {
+
+    const {userId} = useAuth()
     const pathname = usePathname();
     const router = useRouter();
 
     const isAdminPage = pathname?.startsWith("/admin");
-    const isPlayerPage = pathname?.includes("/chapter");
+    const isLandingPage = pathname?.startsWith("/landing");
+    const isPlayerPage = pathname?.includes("/courses");
     const isSearchPage = pathname === "/search"
 
     return (
@@ -32,13 +36,13 @@ export const NavbarRoutes = () => {
                     </Link>
 
 
-            ) : (
+            ) : isAdmin(userId) ? (
                 <Link href="/admin/courses">
                     <Button size='sm' variant="ghost">
                         Admin Mode
                     </Button>
                 </Link>
-            )}
+            ) : null}
             <UserButton />
         </div>
 
