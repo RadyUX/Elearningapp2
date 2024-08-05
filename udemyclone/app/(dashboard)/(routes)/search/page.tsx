@@ -35,7 +35,11 @@ const SearchPage =  async ({
     });
     return(
         <>
-        <div className="px-6 pt-6 md:hidden md:mb-0 block">
+        <div className="h-2/6 bg-[url('/module.jpg')] bg-cover flex flex-col justify-center items-center">
+          <h1 className="text-3xl font-medium">Tout les modules</h1>
+          <h2 className="font-bold text-[12px] text-center md:text-xl">découvrez de nouvelles technologies ,leurs histoire et comment s'en servir a travers des série de cours</h2>
+        </div>
+        <div className="px-6 pt-6 md:hidden md:mb-0 block ">
        <SearchInput/>
         </div>
         <div className="p-6 space-y-4">
@@ -44,8 +48,23 @@ const SearchPage =  async ({
           />
        
         </div>
+<div className="h-screen m-4"> <CoursesList items={courses} /></div>
+       
 
-        <CoursesList items={courses} />
+        <footer className="bg-[#13131B] p-8 md:p-28 text-white">
+    <div className=" flex flex-col md:flex-row gap-5 md:gap-10 justify-center items-center">
+        <p>rafaele.sinaguglia@gmail.com</p>
+        <p>Politique de confidentialité</p>
+        <p>Mention Légal</p>
+    </div>
+    <div className=" md:ml-[95px] flex flex-col md:flex-row justify-between items-center mt-8 md:mt-12">
+        <p>© 2024 [app name], All rights reserved.</p>
+        <div className="flex gap-4">
+        <p>icon 1</p>
+        <p>icon 2</p>
+        </div>
+    </div>
+</footer>
       </>
     )
 }

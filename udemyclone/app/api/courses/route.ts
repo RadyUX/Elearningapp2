@@ -9,8 +9,10 @@ export async function POST(
         const { userId } = auth()
         const { title } = await req.json()
          
-        if(!userId || isAdmin(userId)){
+        if(!userId || !isAdmin(userId)){
+            console.log(userId)
             return new NextResponse("unauthorized", {status: 401})
+            
         }
         const course = await db.course.create({
             data:{

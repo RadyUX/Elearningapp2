@@ -62,6 +62,21 @@ const CourseLayout = async ({
       <main className="md:pl-80 pt-[80px] h-full">
         {children}
       </main>
+
+      <footer className="bg-[#13131B] p-8 md:p-28 text-white">
+    <div className=" flex flex-col md:flex-row gap-5 md:gap-10 justify-center items-center">
+        <p>rafaele.sinaguglia@gmail.com</p>
+        <p>Politique de confidentialité</p>
+        <p>Mention Légal</p>
+    </div>
+    <div className=" md:ml-[95px] flex flex-col md:flex-row justify-between items-center mt-8 md:mt-12">
+        <p>© 2024 [app name], All rights reserved.</p>
+        <div className="flex gap-4">
+        <p>icon 1</p>
+        <p>icon 2</p>
+        </div>
+    </div>
+</footer>
     </div>
   )
 }

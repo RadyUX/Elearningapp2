@@ -6,7 +6,7 @@ const LandingLayout = async ({children}) => {
   return (
     <>
       <NavbarLanding />
-      <main className=" pt-[80px] h-full">
+      <main className=" pt-[80px] h-full overflow-x-hidden ">
         {children}
       </main>
   </>

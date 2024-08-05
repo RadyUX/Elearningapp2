@@ -50,16 +50,13 @@ export const ChapterContentForm = ({
     },
   });
 
-  const removeHtmlTags = (content: string) => {
-    return content.replace(/<\/?[^>]+(>|$)/g, "");
-  };
-  
+ 
   const { isSubmitting, isValid } = form.formState;
 
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
     try {
-      const cleanedContent = removeHtmlTags(values.content);
-      await axios.patch(`/api/courses/${courseId}/chapters/${chapterId}`, { ...values, content: cleanedContent });
+  
+      await axios.patch(`/api/courses/${courseId}/chapters/${chapterId}`, values);
       toast.success("Chapter updated");
       toggleEdit();
       router.refresh();

@@ -73,8 +73,13 @@ body{
  color: white;
 }
 
-input, .ql-editor, textarea{
+input, textarea{
   color: black;
+}
+
+.ql-editor{
+
+  background-color: #07070F;
 }
 
 body > div.h-full > main > div > div.grid.grid-cols-1.md\:grid-cols-2.gap-6.mt-16 > div:nth-child(1) > div:nth-child(5) > form > div.space-y-2 > button{
@@ -86,5 +91,5 @@ p{
 }
 
 .ql-container {
-  font-size: 27px !important ;
+  font-size: 10px !important ;
 }

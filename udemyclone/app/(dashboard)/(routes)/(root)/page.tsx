@@ -1,6 +1,6 @@
 import { auth } from "@clerk/nextjs/server"
 import { redirect } from "next/navigation";
-import { CheckCircle, Clock } from "lucide-react";
+import { CheckCircle, Clock, Badge } from "lucide-react";
 
 import { CoursesList } from "@/components/courses-list";
 
@@ -19,24 +19,63 @@ export default async function Dashboard() {
     coursesInProgress
   } = await getDashboardCourses(userId);
 
+  const getBadge = (completedCount: number) => {
+    if (completedCount > 10) {
+      return <p>Expert</p>;
+    } else if (completedCount > 5) {
+      return <p>Intermédiaire</p>;
+    } else if (completedCount > 3) {
+      return <p>Débutant Avancé</p>;
+    } else {
+      return <p>Débutant</p>;
+    }
+  }
+
   return (
-    <div className="p-6 space-y-4">
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+    <>
+    <div className="p-6 space-y-4 min-h-full bg-[#07070F]">
+      <h1>Mon Apprentissage</h1>
+      <h2>reprenez la ou vous vous etes arreter</h2>
+       <CoursesList
+        items={[...coursesInProgress, ...completedCourses]}
+      />
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 ">
        <InfoCard
           icon={Clock}
-          label="In Progress"
+          label="En Progression"
           numberOfItems={coursesInProgress.length}
        />
        <InfoCard
           icon={CheckCircle}
-          label="Completed"
+          label="Completé"
           numberOfItems={completedCourses.length}
           variant="success"
        />
+         <InfoCard
+          icon={Badge}
+          label="Badge"
+          variant="success"
+          numberOfItems={completedCourses.length}
+       >{getBadge(completedCourses.length)}</InfoCard>
       </div>
-      <CoursesList
-        items={[...coursesInProgress, ...completedCourses]}
-      />
+      
+
+  
     </div>
+    <footer className="bg-[#13131B] p-8 md:p-28 text-white">
+    <div className=" flex flex-col md:flex-row gap-5 md:gap-10 justify-center items-center">
+        <p>rafaele.sinaguglia@gmail.com</p>
+        <p>Politique de confidentialité</p>
+        <p>Mention Légal</p>
+    </div>
+    <div className=" md:ml-[95px] flex flex-col md:flex-row justify-between items-center mt-8 md:mt-12">
+        <p>© 2024 [app name], All rights reserved.</p>
+        <div className="flex gap-4">
+        <p>icon 1</p>
+        <p>icon 2</p>
+        </div>
+    </div>
+</footer>
+</>
   )
 }
