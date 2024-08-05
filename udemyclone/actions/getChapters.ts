@@ -27,6 +27,7 @@ export const getChapter = async ({
       },
       select: {
         price: true,
+        imageUrl: true,
       },
     });
 

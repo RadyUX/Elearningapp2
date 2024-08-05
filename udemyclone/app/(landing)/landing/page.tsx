@@ -1,7 +1,7 @@
 "use client"
 
 import { Button } from "@/components/ui/button";
-import particle from "@/lib/particle"
+
 import Link  from "next/link";
 import Image from "next/image";
 import Particles from "react-tsparticles";
@@ -13,21 +13,21 @@ export default function Landing() {
 return (
 
     <div className="h-full w-screen relative mt-10">
-    <Particles className="absolute inset-0" options={particle} />
+  
     <div className="relative z-10 flex flex-col items-center justify-center gap-y-8 min-h-screen">
-      <h1 className="text-3xl text-[#5DC8E6]  font-bold">MEGA DUMMY TEXT</h1>
-      <h2 className="text-xl text-center text-gray-700">very long dummy text to introduce my beautiful app</h2>
+      <h1 className="text-3xl text-[#5DC8E6]  font-bold">ELearningApp</h1>
+      <h2 className="text-xl text-center text-gray-500">découvrir les secrets des techno en une app</h2>
       <button className="px-6 py-2 bg-[#5DC8E6] text-white rounded-md">
         <Link href="/sign-in">SIGN IN</Link>
       </button>
 
-      <Image src="/screen.jpg" width={800} height={800} className="rounded-md" alt="Picture of the author" />
+   
 
       <ArrowBigDown size={48} className="text-[#5DC8E6] " />
       <div className="w-full pt-10 pb-10"><Banner /></div>
 
       <h1 className="text-3xl text-[#5DC8E6] font-bold mt-10 mb-12 text-center">Une multitude de sujets pour les nouveaux passionés du web</h1>
-      <div className="h-full w-screen px-4 md:px-56 grid grid-cols-1 md:grid-cols-2 gap-4 bg-[#07070F] rounded-lg" id="about">
+      <div className="h-full w-screen gap-y-28 px-4 md:px-56 grid grid-cols-1 md:grid-cols-2 gap-4 bg-[#07070F] rounded-lg" id="about">
       {/* Personalized Learning */}
       <div className="p-4 space-y-2">
         <h2 className="text-[#5DC8E6] font-semibold">Apprentissage personnalisé</h2>
@@ -36,7 +36,7 @@ return (
         </p>
       </div>
       <div>
-        <Image src="/screen.jpg" width={800} height={800} className="rounded-md" alt="Example image" />
+        <Image src="/screen2.jpg" width={800} height={800} className="rounded-md border" alt="Example image" />
       </div>
 
       {/* Forum */}
@@ -47,7 +47,7 @@ return (
         </p>
       </div>
       <div>
-        <Image src="/screen.jpg" width={800} height={800} className="rounded-md" alt="Example image" />
+        <Image src="/screen4.jpg" width={800} height={800} className="rounded-md border" alt="Example image" />
       </div>
 
       {/* Free Signup */}
@@ -58,12 +58,12 @@ return (
         </p>
       </div>
       <div>
-        <Image src="/screen.jpg" width={800} height={800} className="rounded-md" alt="Example image" />
+        <Image src="/screen3.jpg" width={800} height={800} className="rounded-md border" alt="Example image" />
       </div>
     </div>
       
       <div className=" items-start md:pr-56 md:pl-56 mt-12 justify-around flex flex-col  h-full w-screen gap-y-5 bg-[#13131B] p-6 pt-20 pb-20 ">
-            <p className="md:w-2/4">[Nom de l'App] est plus qu'une plateforme d'e-learning classique, 
+            <p className="md:w-2/4">ElearningApp est plus qu'une plateforme d'e-learning classique, 
              couvrant à la fois les essentiels et les aspects moins connus du développement web dans les cours en ligne francophones. 
              Que vous soyez débutant ou déjà sur votre chemin d'apprentissage, je m'engage à vous équiper et a vous faire découvrir les outils et le secret du web pour stimuler votre curiosité.
            </p>
@@ -74,11 +74,11 @@ return (
       </div>
 
       <div className="flex flex-col md:flex-row justify-center items-center w-screen h-full bg-[#07070F] p-4 md:p-24" id="aboutme">
-      {/* Circle Image Container */}
+
       <div className="flex justify-center mb-8 md:mb-0 md:flex-none w-full md:w-1/4">
         <div className="relative w-40 h-40 md:w-64 md:h-64">
           <Image 
-            src="/photo.jpg" 
+            src="/photo1.jpg" 
             layout="fill" 
             className="rounded-full object-cover" 
             alt="Picture of the founder"

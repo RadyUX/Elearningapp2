@@ -10,10 +10,10 @@ export const NavbarRoutes = () => {
 
     const {userId} = useAuth()
     const pathname = usePathname();
-    const router = useRouter();
+ 
 
     const isAdminPage = pathname?.startsWith("/admin");
-    const isLandingPage = pathname?.startsWith("/landing");
+
     const isPlayerPage = pathname?.includes("/courses");
     const isSearchPage = pathname === "/search"
 
@@ -29,7 +29,7 @@ export const NavbarRoutes = () => {
         <div className="flex gap-x-2 ml-auto">
             {isAdminPage || isPlayerPage ? (
                    <Link href="/">
-                        <Button  size='sm' variant="ghost">
+                        <Button  size='sm' variant="ghost" className="bg-[#5DC8E6]">
                             <LogOut className="h-4 w-4 mr-2"/>
                             EXIT
                         </Button> 
@@ -38,7 +38,7 @@ export const NavbarRoutes = () => {
 
             ) : isAdmin(userId) ? (
                 <Link href="/admin/courses">
-                    <Button size='sm' variant="ghost">
+                    <Button size='sm' variant="ghost" className="bg-[#5DC8E6]">
                         Admin Mode
                     </Button>
                 </Link>

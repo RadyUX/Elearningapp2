@@ -2,7 +2,7 @@
 
 import { Course } from "@prisma/client"
 import { ColumnDef } from "@tanstack/react-table"
-import { ArrowUpDown, MoreHorizontal, Pencil } from "lucide-react"
+import { ArrowUpDown, MoreHorizontal, Pencil, Trash } from "lucide-react"
 import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
@@ -16,6 +16,8 @@ import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
 
 export const columns: ColumnDef<Course>[] = [
+
+  
   {
     accessorKey: "title",
     header: ({ column }) => {
@@ -93,12 +95,19 @@ export const columns: ColumnDef<Course>[] = [
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end">
-            <Link href={`/teacher/courses/${id}`}>
+            <Link href={`/admin/courses/${id}`}>
               <DropdownMenuItem>
                 <Pencil className="h-4 w-4 mr-2" />
                 Edit
               </DropdownMenuItem>
             </Link>
+          
+              <DropdownMenuItem>
+              <Trash className="h-4 w-4 mr-2" />
+              Delete
+              </DropdownMenuItem>
+            
+            
           </DropdownMenuContent>
         </DropdownMenu>
       )

@@ -8,6 +8,7 @@ import { Separator } from "@/components/ui/separator";
 import { Preview } from "@/components/preview";
 import { CourseProgressButton } from "./_component/CourseProgressButton";
 import { CourseEnrollButton } from "./_component/CourseEnrollButton";
+import Image from "next/image";
 
 const ChapterIdPage = async ({
   params
@@ -66,6 +67,7 @@ const ChapterIdPage = async ({
             <h2 className="text-2xl font-semibold mb-2">
               {chapter.title}
             </h2>
+            <Image src={course.imageUrl} alt="lol" width={100} height={100} />
             {purchase ? (
               <CourseProgressButton
                 chapterId={params.chapterId}
@@ -74,10 +76,13 @@ const ChapterIdPage = async ({
                 isCompleted={!!userProgress?.isCompleted}
               />
             ) : (
+              <>
+             
               <CourseEnrollButton
                 courseId={params.courseId}
                 price={course.price!}
               />
+              </>
             )}
             </div>
             <Separator />
@@ -93,7 +98,7 @@ const ChapterIdPage = async ({
                     href={attachment.url}
                     target="_blank"
                     key={attachment.id}
-                    className="flex items-center p-3 w-full bg-sky-200 border text-sky-700 rounded-md hover:underline"
+                    className="flex items-center p-3 w-full bg-sky-200 border-[#5DC8E6] text-sky-700 rounded-md hover:underline"
                   >
                     <File />
                     <p className="line-clamp-1">
@@ -110,7 +115,7 @@ const ChapterIdPage = async ({
                   <div>
                   <Preview value={chapter.content} />
                   </div>
-            ): <div>content locked</div>}
+            ): <div><h1 className="text-3xl text-center">content locked</h1></div>}
           
             
             </div>
