@@ -36,29 +36,29 @@ return (
         </p>
       </div>
       <div>
-        <Image src="/screen2.jpg" width={800} height={800} className="rounded-md border" alt="Example image" />
+        <Image src="/screen2.jpg" width={700} height={800} className="rounded-md border" alt="Example image" />
       </div>
 
       {/* Forum */}
       <div className="p-4 space-y-2">
-        <h2 className="text-[#5DC8E6] font-semibold">Forum</h2>
+        <h2 className="text-[#5DC8E6] font-semibold">Interface Intuitive</h2>
         <p className="w-2/3 text-gray-200">
-          Le forum est votre espace de dialogue et de soutien. Cherchez des réponses à vos questions, des conseils pour surmonter vos lacunes, ou simplement partager vos réalisations. Ensemble nous créons un environnement d’apprentissage collaboratif où chaque membre contribue à la richesse de notre communauté.
+        Progresser a votre rythme
         </p>
       </div>
       <div>
-        <Image src="/screen4.jpg" width={800} height={800} className="rounded-md border" alt="Example image" />
+        <Image src="/screen4.jpg" width={700} height={800} className="rounded-md border" alt="Example image" />
       </div>
 
       {/* Free Signup */}
       <div className="p-4 space-y-2">
         <h2 className="text-[#5DC8E6] font-semibold">Inscription Gratuite</h2>
         <p className="w-2/3 text-gray-200">
-          L'accès à l'essentiel de notre contenu est entièrement gratuit, vous offrant la liberté d'explorer et d'apprendre sans barrière. Pour ceux qui souhaitent aller plus loin, nos modules avancés, payants et facultatifs vous attendent, prêts à débloquer de nouveaux horizons de connaissances.
+          L'accès à l'essentiel de notre contenu est entièrement gratuit, vous offrant la liberté d'explorer et d'apprendre sans barrière. Pour ceux qui souhaitent aller plus loin, nos chapitres avancés, payants et facultatifs vous attendent, prêts à débloquer de nouveaux horizons de connaissances.
         </p>
       </div>
       <div>
-        <Image src="/screen3.jpg" width={800} height={800} className="rounded-md border" alt="Example image" />
+        <Image src="/screen3.jpg" width={700} height={800} className="rounded-md border" alt="Example image" />
       </div>
     </div>
       

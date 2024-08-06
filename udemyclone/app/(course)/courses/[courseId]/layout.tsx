@@ -59,7 +59,7 @@ const CourseLayout = async ({
           progressCount={progressCount}
         />
       </div>
-      <main className="md:pl-80 pt-[80px] h-screen">
+      <main className="md:pl-80 pt-[80px] h-full">
         {children}
       </main>
 
@@ -69,7 +69,7 @@ const CourseLayout = async ({
         <p>Politique de confidentialité</p>
         <p>Mention Légal</p>
     </div>
-    <div className=" md:ml-[195px] flex flex-col md:flex-row justify-between items-center mt-8 md:mt-12">
+    <div className=" md:ml-[215px] flex flex-col md:flex-row justify-between items-center mt-8 md:mt-12">
         <p>© 2024 [app name], All rights reserved.</p>
         <div className="flex gap-4">
         <p>icon 1</p>

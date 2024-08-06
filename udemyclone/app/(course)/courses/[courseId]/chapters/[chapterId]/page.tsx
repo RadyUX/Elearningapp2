@@ -112,7 +112,7 @@ const ChapterIdPage = async ({
         </div>
             </div>
             {!isLocked ? (
-                  <div>
+                  <div className="flex justify-center ">
                   <Preview value={chapter.content} />
                   </div>
             ): <div><h1 className="text-3xl text-center">content locked</h1></div>}
