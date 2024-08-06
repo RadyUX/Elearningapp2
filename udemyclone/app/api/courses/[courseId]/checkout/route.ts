@@ -13,10 +13,24 @@ export async function POST(
   try {
     const user = await currentUser();
 
-    if (!user || !user.id || !user.emailAddresses?.[0]?.emailAddress) {
+    if (!user) {
+      console.log("User is not defined");
       return new NextResponse("Unauthorized", { status: 401 });
     }
-
+  
+    if (!user.id) {
+      console.log("User ID is not defined");
+      return new NextResponse("Unauthorized", { status: 401 });
+    }
+  
+    if (!user.emailAddresses || !user.emailAddresses[0] || !user.emailAddresses[0].emailAddress) {
+      console.log("User email is not defined");
+      return new NextResponse("Unauthorized", { status: 401 });
+    }
+  
+    // Si tout est correct
+    console.log("User is authenticated:", user);
+  
     const course = await db.course.findUnique({
       where: {
         id: params.courseId,
