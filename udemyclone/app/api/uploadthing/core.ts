@@ -7,11 +7,6 @@ const f = createUploadthing();
  
 const handleAuth = ()=>{
     const {userId} = auth()
-    const isAuthorized= isAdmin(userId)
-    
-    if(!userId || !isAuthorized){
-       throw new Error ("unauthorized")
-    }
     return {userId}
 }
  
@@ -25,9 +20,5 @@ export const ourFileRouter = {
  .middleware(()=>handleAuth())
  .onUploadComplete(()=>{}),
 
- chapterContent: f({blob: {maxFileSize: "1GB", maxFileCount: 1}})
- .middleware(()=>handleAuth())
- .onUploadComplete(()=>{}),
- 
 } satisfies FileRouter;
 export type OurFileRouter = typeof ourFileRouter;
