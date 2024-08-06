@@ -1,6 +1,6 @@
 import NavbarLanding from "./_components/NavbarLanding"
 
-const LandingLayout = async ({children}) => {
+const LandingLayout = async ({children}:{children: React.ReactNode}) => {
 
 
   return (

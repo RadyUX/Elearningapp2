@@ -84,7 +84,7 @@ export const CategoryForm = ({    initialData, courseId, options}: CategoryFormP
                         <FormItem>
                         
                            <FormControl>
-                              <ComboBox options={...options} {...field}/>
+                              <ComboBox options={options} {...field}/>
                            </FormControl>
                            <FormMessage/>
                         </FormItem>

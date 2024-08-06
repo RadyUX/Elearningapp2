@@ -67,7 +67,7 @@ const ChapterIdPage = async ({
             <h2 className="text-2xl font-semibold mb-2">
               {chapter.title}
             </h2>
-            <Image src={course.imageUrl} alt="lol" width={100} height={100} />
+            <Image src={course.imageUrl  ?? ''} alt="lol" width={100} height={100} />
             {purchase ? (
               <CourseProgressButton
                 chapterId={params.chapterId}
@@ -113,7 +113,7 @@ const ChapterIdPage = async ({
             </div>
             {!isLocked ? (
                   <div className="flex justify-center ">
-                  <Preview value={chapter.content} />
+                  <Preview value={chapter.content  ?? ''} />
                   </div>
             ): <div><h1 className="text-3xl text-center">content locked</h1></div>}
           
