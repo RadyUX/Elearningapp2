@@ -48,7 +48,7 @@ const SearchPage =  async ({
           />
        
         </div>
-<div className="h-screen m-4"> <CoursesList items={courses} /></div>
+<div className="h-screen m-4  bg-[#07070F]"> <CoursesList items={courses} /></div>
        
 
         <footer className="bg-[#13131B] p-8 md:p-28 text-white">
