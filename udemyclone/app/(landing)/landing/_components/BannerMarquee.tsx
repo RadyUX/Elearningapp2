@@ -6,7 +6,7 @@ const Banner = () => {
     <Marquee className="w-full">
       <div className="flex gap-8 md:gap-32 items-center">
         <Image src="/html.png" width={110} height={110} alt="html" className="w-6 h-6 md:w-auto md:h-auto" />
-        <Image src="/css.png" width={110} height={110} alt="css" className="w-6 h-6 md:w-auto md:h-auto" />
+        <Image src="/CSS.png" width={110} height={110} alt="css" className="w-6 h-6 md:w-auto md:h-auto" />
         <Image src="/js.png" width={110} height={110} alt="js" className="w-6 h-6 md:w-auto md:h-auto" />
         <Image src="/vite.png" width={110} height={110} alt="vite" className="w-6 h-6 md:w-auto md:h-auto" />
         <Image src="/node.png" width={110} height={110} alt="node" className="w-6 h-6 md:w-auto md:h-auto" />

@@ -28,22 +28,22 @@ return (
 
       <h1 className="text-3xl text-[#5DC8E6] font-bold mt-10 mb-12 text-center">Une multitude de sujets pour les nouveaux passionés du web</h1>
       <div className="h-full w-screen gap-y-28 px-4 md:px-56 grid grid-cols-1 md:grid-cols-2 gap-4 bg-[#07070F] rounded-lg" id="about">
-      {/* Personalized Learning */}
+    
       <div className="p-4 space-y-2">
-        <h2 className="text-[#5DC8E6] font-semibold">Apprentissage personnalisé</h2>
+        <h2 className="text-[#5DC8E6] font-semibold">Pour débutant et intermédiaire</h2>
         <p className="text-gray-200 w-2/3">
-          Vous guide à travers un parcours d'apprentissage sur mesure selon votre niveau et vos intérêts à travers une interface intuitive et agréable. Suivez votre progression et accédez facilement à vos chapitres en cours.
+          Vous guide à travers un parcours d'apprentissage accessible a tous.Suivez votre progression et accédez facilement à vos chapitres en cours.
         </p>
       </div>
       <div>
         <Image src="/screen2.jpg" width={700} height={800} className="rounded-md border" alt="Example image" />
       </div>
 
-      {/* Forum */}
+      
       <div className="p-4 space-y-2">
         <h2 className="text-[#5DC8E6] font-semibold">Interface Intuitive</h2>
         <p className="w-2/3 text-gray-200">
-        Progresser a votre rythme
+        Explorez un large éventail de catégories disponibles et trouvez les sujets qui vous intéressent le plus.
         </p>
       </div>
       <div>
@@ -91,7 +91,7 @@ return (
         <h1 className="text-white text-2xl md:text-4xl font-bold text-center md:text-left">Rafaele Sinaguglia</h1>
         <h2 className="text-white text-xl md:text-2xl text-center md:text-left">Fondateur</h2>
         <p className="text-white mt-4 w-full md:w-2/3 text-center md:text-left">
-          Je suis un jeune développeur passionné par le web, extrêmement curieux. Mon parcours autodidacte m'a fait découvrir de nombreux sujets intéressants souvent négligés par d'autres plateformes d'e-learning. Avec [Nom de l'App], j'ai voulu créer un espace où les débutants et moi pouvons approfondir notre compréhension dans ce domaine. Rejoignez-moi pour explorer ensemble les aspects du web.
+          Je suis un jeune développeur passionné par le web, extrêmement curieux. Mon parcours autodidacte m'a fait découvrir de nombreux sujets intéressants souvent négligés par d'autres plateformes d'e-learning. Avec ElearningApp, j'ai voulu créer un espace où les débutants et moi pouvons approfondir notre compréhension dans ce domaine. Rejoignez-moi pour explorer ensemble les aspects du web.
         </p>
       </div>
     </div>
