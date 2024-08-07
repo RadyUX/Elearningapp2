@@ -33,7 +33,7 @@ export default async function Dashboard() {
 
   return (
     <>
-     <div className="h-2/6 bg-[url('/learning.jpg')] bg-cover flex flex-col justify-center items-center">
+     <div className="h-2/6 bg-[url('/apprentissage.jpg')] bg-cover  flex flex-col justify-center items-center">
           <h1 className="text-3xl font-medium">Mon Apprentissage</h1>
           <h2 className="font-bold text-[12px] text-center md:text-xl">Reprenez Vos Modules En Cours</h2>
         </div>
