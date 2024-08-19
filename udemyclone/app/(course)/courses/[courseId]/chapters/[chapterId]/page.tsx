@@ -45,7 +45,8 @@ const ChapterIdPage = async ({
   const completeOnEnd = !!purchase && !userProgress?.isCompleted;
 
   return ( 
-    <div className="h-full">
+    <div className="flex flex-col min-h-screen">
+        <div className="flex-grow">  
       {userProgress?.isCompleted && (
         <Banner
           variant="success"
@@ -58,7 +59,7 @@ const ChapterIdPage = async ({
           label="You need to purchase this course to watch this chapter."
         />
       )}
-      <div className="flex flex-col max-w-4xl mx-auto pb-20">
+      <div className="flex flex-col max-w-4xl mx-auto pb-20" >
         <div className="p-4">
          
         </div>
@@ -112,13 +113,29 @@ const ChapterIdPage = async ({
         </div>
             </div>
             {!isLocked ? (
-                  <div className=" md:pl-96 md:pr-96 flex justify-center ">
+                  <div className=" flex justify-center ">
                   <Preview value={chapter.content  ?? ''} />
                   </div>
             ): <div><h1 className="text-3xl text-center">content locked</h1></div>}
+          </div>
           
+      <footer className="bg-[#13131B] p-8 md:p-28 text-white">
+    <div className=" flex flex-col md:flex-row gap-5 md:gap-10 justify-center items-center">
+        <p>rafaele.sinaguglia@gmail.com</p>
+        <p>Politique de confidentialité</p>
+        <p>Mention Légal</p>
+    </div>
+    <div className=" md:ml-[215px] flex flex-col md:flex-row justify-between items-center mt-8 md:mt-12">
+        <p>© 2024 [app name], All rights reserved.</p>
+        <div className="flex gap-4">
+        <p>icon 1</p>
+        <p>icon 2</p>
+        </div>
+    </div>
+</footer>
             
             </div>
+            
 
    );
 }
