@@ -17,7 +17,7 @@ export const InfoCard = ({
   label,
 }: InfoCardProps) => {
   return (
-    <div className=" rounded-md flex flex-col justify-center items-center gap-2 p-3 mt-12">
+    <div className=" rounded-md flex flex-col justify-center items-center gap-2 p-3 mt-12 md:mt-48">
       <Icon className="text-lg" />
       <div>
         <p className="font-medium text-[18px] text-center">

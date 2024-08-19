@@ -4,7 +4,7 @@ import { auth } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
 import toast from "react-hot-toast";
 
-const TeacherLayout = ({
+const AdminLayout = ({
   children
 }: {
   children: React.ReactNode;
@@ -23,4 +23,4 @@ const TeacherLayout = ({
   return <>{children}</>
 }
  
-export default TeacherLayout;
+export default AdminLayout;

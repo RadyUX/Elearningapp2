@@ -8,16 +8,6 @@ import { InfoCard } from "./_components/InfoCard";
 import { getDashboardCourses } from "@/actions/getDashboardCourses";
 
 export default async function Dashboard() {
-  const { userId } = auth();
-
-  if (!userId) {
-    return redirect("/landing");
-  }
-
-  const {
-    completedCourses,
-    coursesInProgress
-  } = await getDashboardCourses(userId);
 
   const getBadge = (completedCount: number) => {
     if (completedCount > 10) {
@@ -31,13 +21,26 @@ export default async function Dashboard() {
     }
   }
 
+  
+  const { userId } = auth();
+
+  if (!userId) {
+    return redirect("/landing");
+  }
+
+  const {
+    completedCourses,
+    coursesInProgress
+  } = await getDashboardCourses(userId);
+
+
   return (
     <>
      <div className="h-2/6 bg-[url('/apprentissage.jpg')] bg-cover  flex flex-col justify-center items-center">
           <h1 className="text-3xl font-medium">Mon Apprentissage</h1>
           <h2 className="font-bold text-[12px] text-center md:text-xl">Reprenez Vos Modules En Cours</h2>
         </div>
-    <div className="p-6 space-y-4 min-h-full bg-[#07070F]">
+    <div className="p-6 space-y-4 min-h-full bg-[#07070F] ">
        <CoursesList
         items={[...coursesInProgress, ...completedCourses]}
       />
