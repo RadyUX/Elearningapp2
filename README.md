@@ -7,7 +7,7 @@ Le projet est construit avec Next.js pour la partie front-end et back-end, et ut
 
 Technologies utilisées
 
-    Next.js v14 : Framework React pour la partie front-end et back-end.
+  Next.js v14 : Framework React pour la partie front-end et back-end.
     Prisma : ORM pour gérer la base de données MySQL.
     Clerk : Service pour la gestion des utilisateurs (authentification, inscription).
     Stripe : Solution de paiement pour gérer les achats de cours.
@@ -16,7 +16,7 @@ Technologies utilisées
 Installation
 Prérequis
 
-    Node.js v20+
+  Node.js v20+
     npm ou yarn installé
     Une base de données MySQL (PlanetScale est utilisé dans ce projet)
     Compte Stripe (pour la gestion des paiements)
@@ -24,11 +24,11 @@ Prérequis
 
 Étapes
 
-    Cloner le projet :
+Cloner le projet :
 
   
-git clone https://github.com/username/nom-du-projet.git
-cd nom-du-projet
+    git clone https://github.com/username/nom-du-projet.git
+    cd nom-du-projet
 
 Installer les dépendances :
 
@@ -38,25 +38,25 @@ npm install
 Configurer les variables d'environnement :
 
 Créer un fichier .env à la racine du projet et y ajouter les clés suivantes :
-
-DATABASE_URL=mysql://<username>:<password>@<host>/<database>?sslaccept=strict
-STRIPE_API_KEY=<votre-clé-stripe>
-NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=<votre-clé-stripe-publique>
-STRIPE_WEBHOOK_SECRET=<votre-webhook-secret>
-CLERK_API_KEY=<votre-clé-clerk>
-NEXT_PUBLIC_CLERK_FRONTEND_API=<votre-clé-clerk-frontend>
-NEXT_PUBLIC_APP_URL=http://localhost:3000
+    
+    DATABASE_URL=mysql://<username>:<password>@<host>/<database>?sslaccept=strict
+    STRIPE_API_KEY=<votre-clé-stripe>
+    NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=<votre-clé-stripe-publique>
+    STRIPE_WEBHOOK_SECRET=<votre-webhook-secret>
+    CLERK_API_KEY=<votre-clé-clerk>
+    NEXT_PUBLIC_CLERK_FRONTEND_API=<votre-clé-clerk-frontend>
+    NEXT_PUBLIC_APP_URL=http://localhost:3000
 
 Initialiser Prisma :
-npx prisma init
+ npx prisma init
 Générer le client Prisma :
 
 
-npx prisma generate
+    npx prisma generate
 
 Appliquer les migrations :
 
-npx prisma migrate dev
+    npx prisma migrate dev
 
 Lancer l'application :
 
